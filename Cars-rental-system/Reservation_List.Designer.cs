@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cars_datagrid = new System.Windows.Forms.DataGridView();
+            this.btn_remove_res = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)(this.cars_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,37 +46,58 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Reservation List";
             // 
-            // dataGridView1
+            // cars_datagrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(831, 467);
-            this.dataGridView1.TabIndex = 2;
+            this.cars_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cars_datagrid.Location = new System.Drawing.Point(37, 50);
+            this.cars_datagrid.Name = "cars_datagrid";
+            this.cars_datagrid.ReadOnly = true;
+            this.cars_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cars_datagrid.Size = new System.Drawing.Size(835, 466);
+            this.cars_datagrid.TabIndex = 53;
             // 
-            // button2
+            // btn_remove_res
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button2.Location = new System.Drawing.Point(37, 543);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(227, 50);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Remove Reservation";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_remove_res.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_remove_res.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(131)))));
+            this.btn_remove_res.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_remove_res.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove_res.ForeColor = System.Drawing.Color.White;
+            this.btn_remove_res.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btn_remove_res.IconColor = System.Drawing.Color.White;
+            this.btn_remove_res.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_remove_res.IconSize = 35;
+            this.btn_remove_res.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_remove_res.Location = new System.Drawing.Point(37, 543);
+            this.btn_remove_res.Name = "btn_remove_res";
+            this.btn_remove_res.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_remove_res.Size = new System.Drawing.Size(224, 50);
+            this.btn_remove_res.TabIndex = 54;
+            this.btn_remove_res.Tag = "Dashboard";
+            this.btn_remove_res.Text = "     Remove Reservation";
+            this.btn_remove_res.UseVisualStyleBackColor = true;
+            this.btn_remove_res.Click += new System.EventHandler(this.btn_remove_res_Click);
             // 
-            // button1
+            // iconButton1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button1.Location = new System.Drawing.Point(293, 543);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 50);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Print Reservation Bill";
-            this.button1.UseVisualStyleBackColor = true;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(131)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 35;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(297, 543);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(209, 50);
+            this.iconButton1.TabIndex = 55;
+            this.iconButton1.Tag = "Dashboard";
+            this.iconButton1.Text = "     Print Reservation Bill";
+            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // Reservation_List
             // 
@@ -84,14 +105,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(915, 625);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btn_remove_res);
+            this.Controls.Add(this.cars_datagrid);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reservation_List";
             this.Text = "Reservation_List";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Reservation_List_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cars_datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,8 +122,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView cars_datagrid;
+        private FontAwesome.Sharp.IconButton btn_remove_res;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
