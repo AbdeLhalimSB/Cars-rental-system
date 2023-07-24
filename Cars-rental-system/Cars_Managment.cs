@@ -150,7 +150,7 @@ namespace Cars_rental_system
                         command.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("ISP inserted successfully!", "Action Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Car inserted successfully!", "Action Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
